@@ -1,0 +1,116 @@
+procs = 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100
+orders = -20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+posx = start end center space-between space-around
+posy = start end center baseline stretch
+*
+  box-sizing border-box
+
+.padding
+  padding 8px
+.margin
+  margin 8px
+.fill
+  position absolute
+  width 100%
+  height 100%
+  min-height 100%
+  margin 0
+
+.absolute
+  position absolute
+.relative
+  position relative
+.fixed
+  position fixed
+.static
+  position static
+.scroll
+  overflow auto
+.scroll-x
+  overflow-x auto
+.scroll-y
+  overflow-y auto
+.hidden
+  overflow hidden
+
+
+
+func(size)
+  // флекс-контейнеры
+  if size is 'flex'
+    _size = ''
+  else
+    _size = '-'+size
+
+  // position
+  for pos1 in posx
+    if pos1 is 'start'
+      flexpos1 = flex-start
+    else if pos1 is 'end'
+      flexpos1 = flex-end
+    else
+      flexpos1 = pos1
+    .{pos1}{_size}
+      justify-content flexpos1
+    for pos2 in posy
+      if pos2 is 'start'
+        flexpos2 = flex-start
+      else if pos2 is 'end'
+        flexpos2 = flex-end
+      else
+        flexpos2 = pos2
+      .{pos1}-{pos2}{_size}
+        justify-content flexpos1
+        align-items flexpos2
+
+
+  .row{_size}
+    display flex
+    flex-direction row
+  .column{_size}
+    display flex
+    flex-direction column
+  .wrap{_size}
+    flex-wrap wrap
+  .nowrap{_size}
+    flex-wrap nowrap
+  // hide-show
+  .hide{_size}
+    display none
+
+  // флекс-элементы
+  .{size} // без размера
+    flex 1 1 auto
+  for proc in procs
+    if proc is 33
+      _proc = 33.33
+    .{size}-{proc} // с размером
+      flex 1 1 (proc)%
+
+  // order
+  for pos in orders
+    .{size}-order-{pos}
+      order pos
+
+
+
+
+func('flex')
+
+@media (max-width: 599px)
+  func 'xs'
+@media (min-width: 600px)
+  func 'gt-xs'
+@media (min-width: 600px) and (max-width: 959px)
+  func 'sm'
+@media (min-width: 960px)
+  func 'gt-sm'
+@media (min-width: 960px) and (max-width: 1279px)
+  func 'md'
+@media (min-width: 1280px)
+  func 'gt-md'
+@media (min-width: 1280px) and (max-width: 1919px)
+  func 'lg'
+@media (min-width: 1920px)
+  func 'gt-lg'
+  func 'xl'
