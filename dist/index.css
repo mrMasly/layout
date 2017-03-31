@@ -169,7 +169,7 @@
 .fx-hide {
   display: none;
 }
-.fx {
+.fx-flex {
   flex: 1 1 auto;
 }
 .fx-5 {
@@ -706,7 +706,7 @@
   .xs-hide {
     display: none;
   }
-  .xs {
+  .xs-flex {
     flex: 1 1 auto;
   }
   .xs-5 {
@@ -1420,7 +1420,7 @@
   .gt-xs-hide {
     display: none;
   }
-  .gt-xs {
+  .gt-xs-flex {
     flex: 1 1 auto;
   }
   .gt-xs-5 {
@@ -2134,7 +2134,7 @@
   .sm-hide {
     display: none;
   }
-  .sm {
+  .sm-flex {
     flex: 1 1 auto;
   }
   .sm-5 {
@@ -2848,7 +2848,7 @@
   .gt-sm-hide {
     display: none;
   }
-  .gt-sm {
+  .gt-sm-flex {
     flex: 1 1 auto;
   }
   .gt-sm-5 {
@@ -3562,7 +3562,7 @@
   .md-hide {
     display: none;
   }
-  .md {
+  .md-flex {
     flex: 1 1 auto;
   }
   .md-5 {
@@ -4276,7 +4276,7 @@
   .gt-md-hide {
     display: none;
   }
-  .gt-md {
+  .gt-md-flex {
     flex: 1 1 auto;
   }
   .gt-md-5 {
@@ -4990,7 +4990,7 @@
   .lg-hide {
     display: none;
   }
-  .lg {
+  .lg-flex {
     flex: 1 1 auto;
   }
   .lg-5 {
@@ -5704,7 +5704,7 @@
   .gt-lg-hide {
     display: none;
   }
-  .gt-lg {
+  .gt-lg-flex {
     flex: 1 1 auto;
   }
   .gt-lg-5 {
@@ -6418,7 +6418,7 @@
   .xl-hide {
     display: none;
   }
-  .xl {
+  .xl-flex {
     flex: 1 1 auto;
   }
   .xl-5 {
