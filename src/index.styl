@@ -87,17 +87,17 @@ func(size)
       _proc = proc+'%'
     .{size}-{proc} // с размером
       flex 1 1 (_proc)
-    .fx-row .{size}-{proc}
+    .fx-row > .{size}-{proc}
       max-width (_proc)
       max-height 100%
-    .fx-column .{size}-{proc}
+    .fx-column > .{size}-{proc}
       max-height (_proc)
       max-width 100%
     unless size is fx
-      .{size}-row .{size}-{proc}
+      .{size}-row > .{size}-{proc}
         max-width (_proc)
         max-height 100%
-      .{size}-column .{size}-{proc}
+      .{size}-column > .{size}-{proc}
         max-height (_proc)
         max-width 100%
 
