@@ -77,6 +77,17 @@ func(size)
   // флекс-элементы
   .{size}-flex // без размера
     flex 1 1 auto
+  unless size is l
+    .l-row > .{size}-flex
+      min-width 0
+    .l-column > .{size}-flex
+      min-height 0
+  .{size}-row > .{size}-flex
+    min-width 0
+  .{size}-column > .{size}-flex
+    min-height 0
+
+
   for proc in procs
     if proc is 33
       // _proc = calc(100% / 3)
@@ -88,7 +99,7 @@ func(size)
       _proc = proc+'%'
     .{size}-{proc} // с размером
       flex 1 1 (_proc)
-    if size not 'l'
+    unless size is l
       .l-row > .{size}-{proc}
         max-width (_proc)
         max-height 100%
@@ -102,7 +113,7 @@ func(size)
       max-height (_proc)
       max-width 100%
 
-    unless size is fx
+    unless size is l
       .{size}-row > .{size}-{proc}
         max-width (_proc)
         max-height 100%
